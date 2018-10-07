@@ -1,3 +1,5 @@
+# Exports when building game
+exports/
 
 # Godot-specific ignores
 .import/
