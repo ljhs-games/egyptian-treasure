@@ -3,7 +3,7 @@
 [ext_resource path="res://nodes/travel-button/TravelButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/main-font/Medium.tres" type="DynamicFont" id=2]
 
-[node name="Diary" type="Node2D" index="0"]
+[node name="Diary" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
