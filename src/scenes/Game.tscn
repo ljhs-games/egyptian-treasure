@@ -32,8 +32,16 @@ position = Vector2( 700, 430 )
 
 position = Vector2( 0, 700 )
 
+[node name="LeftWall" parent="Background" index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -3, 703 )
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
 [node name="Player" parent="." index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 70, 570 )
+move_acceleration = 20.0
+max_move_velocity = 40.0
 
 
