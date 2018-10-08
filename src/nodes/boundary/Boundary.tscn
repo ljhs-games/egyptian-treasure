@@ -4,7 +4,7 @@
 
 custom_solver_bias = 0.0
 a = Vector2( 0, 0 )
-b = Vector2( 700, 0 )
+b = Vector2( 1400, 0 )
 
 [node name="Boundary" type="StaticBody2D"]
 

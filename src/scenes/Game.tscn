@@ -14,19 +14,19 @@
 
 [node name="BackgroundPlatform" parent="Background" index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 350, 140 )
+position = Vector2( 700, -250 )
 
 [node name="Ghost" parent="Background/BackgroundPlatform" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( -40, 60 )
+position = Vector2( -25, -35 )
 
 [node name="BackgroundPlatform2" parent="Background" index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 350, 310 )
+position = Vector2( 700, 70 )
 
 [node name="BackgroundPlatform3" parent="Background" index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 350, 500 )
+position = Vector2( 700, 430 )
 
 [node name="Floor" parent="Background" index="4" instance=ExtResource( 4 )]
 

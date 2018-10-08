@@ -12,6 +12,7 @@ var acceleration = Vector2()
 func _ready():
 	acceleration.y = gravity
 	set_physics_process(true)
+	set_process_input(true)
 
 func _physics_process(delta):
 	move_and_slide(velocity, Vector2(0, -1))

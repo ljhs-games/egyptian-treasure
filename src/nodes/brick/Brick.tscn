@@ -4,11 +4,11 @@
 
 [node name="Brick" type="Sprite"]
 
-position = Vector2( 350, 350 )
+position = Vector2( 700, 0 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 175, 175 )
+region_rect = Rect2( 0, 0, 350, 350 )
 _sections_unfolded = [ "Material", "Region", "Transform" ]
 
 

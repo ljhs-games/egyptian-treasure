@@ -58,6 +58,7 @@ margin_bottom = 78.0
 custom_fonts/font = ExtResource( 1 )
 text = "Start"
 _sections_unfolded = [ "custom_fonts" ]
+target_scene = "res://scenes/Diary.tscn"
 
 [node name="CreditsButton" parent="CanvasLayer/VBoxContainer" index="1" instance=ExtResource( 2 )]
 
