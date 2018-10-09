@@ -16,7 +16,7 @@ func _ready():
 	set_process_input(true)
 
 func _physics_process(delta):
-	acceleration.x = (cur_actions[ACTIONS.right] + cur_actions[ACTIONS.left]) * move_speed
+	acceleration.x = (cur_actions[ACTIONS.right] + cur_actions[ACTIONS.left]) * move_acceleration
 	velocity += acceleration
 	if(is_on_wall()):
 		velocity.x = 0

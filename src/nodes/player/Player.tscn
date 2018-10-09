@@ -19,7 +19,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-move_speed = 20.0
+move_acceleration = 20.0
+max_move_velocity = 40.0
 gravity = 9.8
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
