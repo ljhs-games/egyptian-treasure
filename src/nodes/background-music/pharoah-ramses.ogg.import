@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pharoah-ramses.ogg-3009fafb0a703e11a503100bc00d0530.oggstr"
+
+[deps]
+
+source_file="res://nodes/background-music/pharoah-ramses.ogg"
+dest_files=[ "res://.import/pharoah-ramses.ogg-3009fafb0a703e11a503100bc00d0530.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

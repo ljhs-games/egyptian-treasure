@@ -4,11 +4,12 @@
 
 [node name="BackgroundPlatform" type="Sprite"]
 
+modulate = Color( 0.75, 0.75, 0.75, 1 )
 position = Vector2( 700, 10 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 700, 10 )
-_sections_unfolded = [ "Region", "Transform" ]
+_sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 
