@@ -12,6 +12,25 @@ var acceleration = Vector2()
 func _ready():
 	set_physics_process(true)
 	set_process_input(true)
+	set_process(true)
+
+func _process(delta):
+	if(cur_actions[ACTIONS.right] | cur_actions[ACTIONS.left] == 0):
+		$AnimatedSprite.play("default")
+	else:
+		if(cur_actions[ACTIONS.left]):
+			$AnimatedSprite.flip_h = true
+		else:
+			$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("walking")
+
+func on_ladder():
+	linear_damp = 20.0
+	gravity_scale = 0.0
+
+func off_ladder():
+	linear_damp = -1
+	gravity_scale = 10.0
 
 func _physics_process(delta):
 	acceleration.x = (cur_actions[ACTIONS.right] + cur_actions[ACTIONS.left]) * move_acceleration

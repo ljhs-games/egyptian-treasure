@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player-placeholder.png-37a030677ee9df68e00ab17f6a2371b6.stex"
+path="res://.import/Player_Jumping8.png-78c683dadf4599557fb796ad534a59c1.stex"
 
 [deps]
 
-source_file="res://nodes/player/player-placeholder.png"
-dest_files=[ "res://.import/player-placeholder.png-37a030677ee9df68e00ab17f6a2371b6.stex" ]
+source_file="res://nodes/player/Player_Jumping/Player_Jumping8.png"
+dest_files=[ "res://.import/Player_Jumping8.png-78c683dadf4599557fb796ad534a59c1.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
