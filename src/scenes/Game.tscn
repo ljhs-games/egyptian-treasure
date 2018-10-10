@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://nodes/brick/Brick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/background-platform/BackgroundPlatform.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://nodes/ladder/Ladder.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://nodes/sound-button/SoundButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://nodes/platform/Platform.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -120,5 +121,9 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 _sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Platform" parent="." index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 267, 576 )
 
 
