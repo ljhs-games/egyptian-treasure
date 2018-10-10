@@ -1,13 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://nodes/ghost/ghost_placeholder.png" type="Texture" id=1]
+[ext_resource path="res://nodes/ghost/Ghost.gd" type="Script" id=1]
+[ext_resource path="res://nodes/ghost/EgyptionPainting.png" type="Texture" id=2]
 
-[node name="Ghost" type="Node2D"]
+[node name="Ghost" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+move_speed = 300.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 1 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Vision" type="Area2D" parent="." index="1"]

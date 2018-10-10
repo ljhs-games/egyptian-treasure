@@ -49,8 +49,6 @@ content_margin_bottom = -1.0
 
 [node name="Background" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Brick" parent="Background" index="0" instance=ExtResource( 1 )]
 
 modulate = Color( 0.578125, 0.578125, 0.578125, 1 )
@@ -68,9 +66,17 @@ position = Vector2( -25, -35 )
 
 position = Vector2( 700, 70 )
 
+[node name="Ghost2" parent="Background/BackgroundPlatform2" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -10, -35 )
+
 [node name="BackgroundPlatform3" parent="Background" index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 700, 430 )
+
+[node name="Ghost3" parent="Background/BackgroundPlatform3" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -10, -35 )
 
 [node name="Floor" parent="Background" index="4" instance=ExtResource( 4 )]
 
