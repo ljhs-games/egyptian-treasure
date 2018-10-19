@@ -3,7 +3,7 @@
 [ext_resource path="res://nodes/ghost/Ghost.gd" type="Script" id=1]
 [ext_resource path="res://nodes/ghost/EgyptionPainting.png" type="Texture" id=2]
 
-[node name="Ghost" type="Node2D" index="0"]
+[node name="Ghost" type="Node2D"]
 
 script = ExtResource( 1 )
 move_speed = 300.0

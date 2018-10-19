@@ -6,9 +6,9 @@
 [ext_resource path="res://nodes/boundary/Boundary.tscn" type="PackedScene" id=4]
 [ext_resource path="res://nodes/background-music/BackgroundMusicPlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://nodes/ladder/Ladder.tscn" type="PackedScene" id=6]
-[ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://nodes/sound-button/SoundButton.tscn" type="PackedScene" id=8]
-[ext_resource path="res://nodes/platform/Platform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://nodes/platform/Platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://nodes/sound-button/SoundButton.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -45,7 +45,7 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="." index="0"]
 
@@ -61,6 +61,7 @@ position = Vector2( 700, -250 )
 [node name="Ghost" parent="Background/BackgroundPlatform" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -25, -35 )
+move_speed = 100.0
 
 [node name="BackgroundPlatform2" parent="Background" index="2" instance=ExtResource( 2 )]
 
@@ -69,6 +70,7 @@ position = Vector2( 700, 70 )
 [node name="Ghost2" parent="Background/BackgroundPlatform2" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -10, -35 )
+move_speed = 100.0
 
 [node name="BackgroundPlatform3" parent="Background" index="3" instance=ExtResource( 2 )]
 
@@ -77,6 +79,7 @@ position = Vector2( 700, 430 )
 [node name="Ghost3" parent="Background/BackgroundPlatform3" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -10, -35 )
+move_speed = 100.0
 
 [node name="Floor" parent="Background" index="4" instance=ExtResource( 4 )]
 
@@ -98,13 +101,23 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Stage" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Ladder" parent="Stage" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 390, 620 )
 
-[node name="Player" parent="." index="2" instance=ExtResource( 7 )]
+[node name="Ladder2" parent="Stage" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 230, 480 )
+
+[node name="Platform" parent="Stage" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 267, 576 )
+
+[node name="Platform2" parent="Stage" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 100, 400 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 77, 648 )
 gravity_scale = 10.0
@@ -118,7 +131,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="SoundButton" parent="UI" index="0" instance=ExtResource( 8 )]
+[node name="SoundButton" parent="UI" index="0" instance=ExtResource( 9 )]
 
 light_mask = 0
 custom_styles/hover = SubResource( 1 )
@@ -127,9 +140,5 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 _sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Platform" parent="." index="4" instance=ExtResource( 9 )]
-
-position = Vector2( 267, 576 )
 
 
