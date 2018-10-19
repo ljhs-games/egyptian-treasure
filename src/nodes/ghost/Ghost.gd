@@ -20,7 +20,9 @@ func _process(delta):
 func update_direction():
 	if(global_position.x > OS.get_real_window_size().x):
 		cur_direction = DIRECTION.left
+		$Vision.global_scale.x = -1
 		$Sprite.flip_h = true
 	if(global_position.x < 0):
 		cur_direction = DIRECTION.right
+		$Vision.global_scale.x = 1
 		$Sprite.flip_h = false
