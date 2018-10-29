@@ -131,6 +131,7 @@ position = Vector2( 160, 220 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 8 )]
 
+visible = false
 position = Vector2( 77, 648 )
 gravity_scale = 10.0
 _sections_unfolded = [ "Angular", "Linear" ]

@@ -6,11 +6,14 @@ var cur_actions = { ACTIONS.right: 0, ACTIONS.left: 0 }
 export var move_acceleration = 30.0
 export var max_move_velocity = 450.0
 export var jump_velocity = 400.0
+export var ladder_move_velocity = 600.0
 
 var acceleration = Vector2()
+var on_ladder = false
 
 func _ready():
 	DeathBroadcaster.connect("dead", self, "_on_death")
+	visible = true
 	set_physics_process(true)
 	set_process_input(true)
 	set_process(true)
@@ -26,10 +29,12 @@ func _process(delta):
 		$AnimatedSprite.play("walking")
 
 func on_ladder():
+	on_ladder = true
 	linear_damp = 20.0
 	gravity_scale = 0.0
 
 func off_ladder():
+	on_ladder = false
 	linear_damp = -1
 	gravity_scale = 10.0
 
@@ -39,12 +44,20 @@ func _physics_process(delta):
 	linear_velocity.x = clamp(linear_velocity.x, -max_move_velocity, max_move_velocity)
 
 func jump():
-	if($RayCast2D.is_colliding()):
+	if(on_ladder):
+		linear_velocity.y = -ladder_move_velocity
+	elif($RayCast2D.is_colliding()):
 		#print(velocity.y)
 		linear_velocity.y = -jump_velocity
 		#print(velocity.y)
 
+func down():
+	if(on_ladder):
+		linear_velocity.y = ladder_move_velocity
+
 func _input(event):
+	if event.is_action_pressed("down"):
+		down()
 	if event.is_action_pressed("jump"):
 		jump()
 	if event.is_action("ui_right"):
