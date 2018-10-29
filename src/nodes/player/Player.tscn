@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://nodes/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://nodes/player/light-mask.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://nodes/player/Player_Walking/Player_Walking_6.png" type="Texture" id=19]
 [ext_resource path="res://nodes/player/Player_Walking/Player_Walking_7.png" type="Texture" id=20]
 [ext_resource path="res://nodes/player/Player_Walking/Player_Walking_8.png" type="Texture" id=21]
+[ext_resource path="res://nodes/player/exclamation/ExclamationPoint.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -142,5 +143,9 @@ scale = Vector2( 3.375, 3.375 )
 frames = SubResource( 2 )
 animation = "default"
 _sections_unfolded = [ "Transform" ]
+
+[node name="ExclamationPoint" parent="." index="5" instance=ExtResource( 22 )]
+
+position = Vector2( 0, -80 )
 
 

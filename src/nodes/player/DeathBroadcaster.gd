@@ -1,3 +1,3 @@
 extends Node
 
-signal caught
+signal dead

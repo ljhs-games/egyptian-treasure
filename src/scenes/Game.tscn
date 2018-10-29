@@ -109,13 +109,25 @@ position = Vector2( 390, 620 )
 
 position = Vector2( 230, 480 )
 
-[node name="Platform" parent="Stage" index="2" instance=ExtResource( 7 )]
+[node name="Ladder3" parent="Stage" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 40, 350 )
+
+[node name="Ladder4" parent="Stage" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 40, 230 )
+
+[node name="Platform" parent="Stage" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 267, 576 )
 
-[node name="Platform2" parent="Stage" index="3" instance=ExtResource( 7 )]
+[node name="Platform2" parent="Stage" index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 100, 400 )
+position = Vector2( 98.6396, 442.172 )
+
+[node name="Platform3" parent="Stage" index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 160, 220 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 8 )]
 

@@ -10,6 +10,7 @@ export var jump_velocity = 400.0
 var acceleration = Vector2()
 
 func _ready():
+	DeathBroadcaster.connect("dead", self, "_on_death")
 	set_physics_process(true)
 	set_process_input(true)
 	set_process(true)
@@ -62,3 +63,6 @@ func bring_to_zero(cur_val, difference):
 		return (abs(cur_val)/cur_val)*-1*difference
 	else:
 		return -cur_val
+
+func _on_death():
+	linear_damp = 100.0

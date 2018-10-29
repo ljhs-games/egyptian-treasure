@@ -28,4 +28,5 @@ func update_direction():
 
 func _on_Vision_body_entered(body):
 	if(body.is_in_group("player")):
-		GhostBroadcaster.emit_signal("caught")
+		DeathBroadcaster.emit_signal("dead")
+		set_process(false)

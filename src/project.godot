@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Settings="*res://nodes/settings/Setttings.gd"
+DeathBroadcaster="*res://nodes/player/DeathBroadcaster.gd"
 
 [display]
 
