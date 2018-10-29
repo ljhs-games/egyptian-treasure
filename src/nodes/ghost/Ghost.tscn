@@ -4,10 +4,12 @@
 [ext_resource path="res://nodes/ghost/EgyptionPainting.png" type="Texture" id=2]
 [ext_resource path="res://nodes/ghost/Vision.png" type="Texture" id=3]
 
-[node name="Ghost" type="Node2D"]
+[node name="Ghost" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 move_speed = 300.0
+bounds = Vector2( 0, 1400 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -17,7 +19,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Vision" type="Area2D" parent="." index="1"]
 
-scale = Vector2( -1, 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -57,5 +58,7 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="Vision" to="." method="_on_Vision_body_entered"]
 
 

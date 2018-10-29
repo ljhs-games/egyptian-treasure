@@ -3,6 +3,7 @@ extends Node2D
 enum DIRECTION { left, right }
 
 export var move_speed = 100.0
+export var bounds = Vector2(0, 1400)
 
 var cur_direction = DIRECTION.right
 
@@ -18,11 +19,13 @@ func _process(delta):
 		global_position.x -= move_speed*delta
 
 func update_direction():
-	if(global_position.x > OS.get_real_window_size().x):
+	if(global_position.x > bounds.y):
 		cur_direction = DIRECTION.left
-		$Vision.global_scale.x = -1
-		$Sprite.flip_h = true
-	if(global_position.x < 0):
+		scale.x = -1
+	if(global_position.x < bounds.x):
 		cur_direction = DIRECTION.right
-		$Vision.global_scale.x = 1
-		$Sprite.flip_h = false
+		scale.x = 1
+
+func _on_Vision_body_entered(body):
+	if(body.is_in_group("player")):
+		GhostBroadcaster.emit_signal("caught")
