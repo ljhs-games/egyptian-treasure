@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://nodes/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://nodes/player/light-mask.png" type="Texture" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://nodes/player/Player_Walking/Player_Walking_8.png" type="Texture" id=21]
 [ext_resource path="res://nodes/player/exclamation/ExclamationPoint.tscn" type="PackedScene" id=22]
 [ext_resource path="res://nodes/boulder-wipeout/BoulderWipeout.tscn" type="PackedScene" id=23]
-[ext_resource path="res://nodes/boulder-wipeout/Rock_2.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -49,7 +48,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Player" type="RigidBody2D" groups=[
+[node name="Player" type="RigidBody2D" index="0" groups=[
 "player",
 ]]
 
@@ -165,12 +164,7 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Rock_2" type="Sprite" parent="." index="8"]
-
-position = Vector2( 700, 190 )
-texture = ExtResource( 24 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="9"]
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="8"]
 
 visible = false
 color = Color( 0, 0, 0, 1 )
