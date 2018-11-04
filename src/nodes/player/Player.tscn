@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://nodes/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://nodes/player/light-mask.png" type="Texture" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://nodes/player/Player_Walking/Player_Walking_7.png" type="Texture" id=20]
 [ext_resource path="res://nodes/player/Player_Walking/Player_Walking_8.png" type="Texture" id=21]
 [ext_resource path="res://nodes/player/exclamation/ExclamationPoint.tscn" type="PackedScene" id=22]
+[ext_resource path="res://nodes/boulder-wipeout/BoulderWipeout.tscn" type="PackedScene" id=23]
+[ext_resource path="res://nodes/boulder-wipeout/Rock_2.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -105,8 +107,9 @@ _sections_unfolded = [ "Smoothing" ]
 
 shape = SubResource( 1 )
 
-[node name="Light2D" type="Light2D" parent="." index="2"]
+[node name="PlayerLight" type="Light2D" parent="." index="2"]
 
+visible = false
 enabled = true
 editor_only = false
 texture = ExtResource( 2 )
@@ -114,7 +117,7 @@ offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 0.998169, 1, 0.765625, 1 )
 energy = 1.0
-mode = 3
+mode = 0
 range_height = 0.0
 range_z_min = -1024
 range_z_max = 1024
@@ -128,7 +131,7 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
-_sections_unfolded = [ "Material", "Range", "Shadow" ]
+_sections_unfolded = [ "Material", "Range", "Shadow", "Transform" ]
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="3"]
 
@@ -148,5 +151,28 @@ _sections_unfolded = [ "Transform" ]
 [node name="ExclamationPoint" parent="." index="5" instance=ExtResource( 22 )]
 
 position = Vector2( 0, -80 )
+
+[node name="BoulderWipeout" parent="." index="6" instance=ExtResource( 23 )]
+
+position = Vector2( -350, -450 )
+
+[node name="LightTween" type="Tween" parent="." index="7"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Rock_2" type="Sprite" parent="." index="8"]
+
+position = Vector2( 700, 190 )
+texture = ExtResource( 24 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="9"]
+
+visible = false
+color = Color( 0, 0, 0, 1 )
 
 

@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Rock3CollisionShape" type="CollisionPolygon2D"]
+
+scale = Vector2( 2, 2 )
+build_mode = 0
+polygon = PoolVector2Array( -6.23898, -21.2488, 16.4238, -21.7758, 25.9105, -13.0797, 30.6538, -4.11998, 21.9577, 8.26546, 4.30182, 17.4887, -14.6716, 16.6981, -29.4288, -0.167175, -19.415, -13.0797 )
+_sections_unfolded = [ "Transform" ]
+
+

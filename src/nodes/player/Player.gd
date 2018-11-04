@@ -10,10 +10,15 @@ export var ladder_move_velocity = 600.0
 
 var acceleration = Vector2()
 var on_ladder = false
+var beginning_position = Vector2()
 
 func _ready():
+	beginning_position = global_position
 	DeathBroadcaster.connect("dead", self, "_on_death")
-	visible = true
+	DeathBroadcaster.connect("reset", self, "_on_reset")
+	#DeathBroadcaster.emit_signal("dead")
+	$PlayerLight.visible = true
+	$CanvasModulate.visible = true
 	set_physics_process(true)
 	set_process_input(true)
 	set_process(true)
@@ -78,4 +83,19 @@ func bring_to_zero(cur_val, difference):
 		return -cur_val
 
 func _on_death():
-	linear_damp = 100.0
+	mode = RigidBody2D.MODE_STATIC
+	$BoulderWipeout.wipeout()
+	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(1,1), Vector2(2,2), 1.0, Tween.TRANS_CUBIC, Tween.EASE_IN)
+	$LightTween.start()
+	yield(get_tree().create_timer(1.5), "timeout")
+	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(2,2), Vector2(0,0), 1.5, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$LightTween.start()
+	yield($LightTween, "tween_completed")
+	DeathBroadcaster.emit_signal("reset")
+
+func _on_reset():
+	global_position = beginning_position
+	$BoulderWipeout.clear_boulders()
+	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(0,0), Vector2(1,1), 1.0, Tween.TRANS_CUBIC,Tween.EASE_OUT)
+	yield($LightTween, "tween_completed")
+	mode = RigidBody2D.MODE_CHARACTER
