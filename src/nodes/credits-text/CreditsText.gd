@@ -1,14 +1,37 @@
-extends RichTextLabel
+extends Label
 
-export (String, FILE) var credits_filepath
+export var scroll_rate = 40.0
+
+var start_counter = 0.0
+
+var credits = """
+creikey
+as
+Team Lead and Programmer
+
+
+Stving_artist
+as
+Artist
+
+Music
+by
+Derek Fiechter
+
+Record Scratch
+by
+luffy CC BY 3.0
+"""
 
 func _ready():
-	var credits_file = File.new()
-	credits_file.open(credits_filepath, credits_file.READ)
-	var credits_text = credits_file.get_as_text()
-	if credits_text != "":
-		clear()
-		push_align(RichTextLabel.ALIGN_CENTER)
-		add_text(credits_text)
-		pop()
-	credits_file.close()
+	set_process(true)
+	if credits != "":
+		self.text = credits
+
+func _process(delta):
+	if start_counter < 1.0:
+		start_counter += delta
+		return
+	rect_global_position.y -= scroll_rate*delta
+	if margin_bottom <= 500:
+		set_process(false)
