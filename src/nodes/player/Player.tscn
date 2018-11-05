@@ -48,7 +48,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Player" type="RigidBody2D" index="0" groups=[
+[node name="Player" type="RigidBody2D" groups=[
 "player",
 ]]
 
@@ -71,6 +71,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 move_acceleration = 30.0
 max_move_velocity = 450.0
 jump_velocity = 400.0
@@ -151,11 +152,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 0, -80 )
 
-[node name="BoulderWipeout" parent="." index="6" instance=ExtResource( 23 )]
-
-position = Vector2( -350, -450 )
-
-[node name="LightTween" type="Tween" parent="." index="7"]
+[node name="LightTween" type="Tween" parent="." index="6"]
 
 repeat = false
 playback_process_mode = 1
@@ -164,9 +161,13 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="8"]
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="7"]
 
 visible = false
 color = Color( 0, 0, 0, 1 )
+
+[node name="BoulderWipeout" parent="." index="8" instance=ExtResource( 23 )]
+
+position = Vector2( -350, -450 )
 
 

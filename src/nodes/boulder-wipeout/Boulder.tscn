@@ -2,7 +2,9 @@
 
 [ext_resource path="res://nodes/boulder-wipeout/Boulder.gd" type="Script" id=1]
 
-[node name="Boulder" type="RigidBody2D"]
+[node name="Boulder" type="RigidBody2D" groups=[
+"boulder",
+]]
 
 input_pickable = false
 collision_layer = 0

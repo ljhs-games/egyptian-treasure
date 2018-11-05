@@ -83,19 +83,24 @@ func bring_to_zero(cur_val, difference):
 		return -cur_val
 
 func _on_death():
-	mode = RigidBody2D.MODE_STATIC
-	$BoulderWipeout.wipeout()
-	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(1,1), Vector2(2,2), 1.0, Tween.TRANS_CUBIC, Tween.EASE_IN)
-	$LightTween.start()
-	yield(get_tree().create_timer(1.5), "timeout")
-	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(2,2), Vector2(0,0), 1.5, Tween.TRANS_QUAD, Tween.EASE_IN)
+	linear_damp = 400
+	gravity_scale = 0.0
+	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(1,1), Vector2(2,2), 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
 	$LightTween.start()
 	yield($LightTween, "tween_completed")
+	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(2,2), Vector2(0,0), 0.5, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$LightTween.start()
+	yield($LightTween, "tween_completed")
+	# now everything should be hidden...
+	global_position = beginning_position
+	# reset everything
 	DeathBroadcaster.emit_signal("reset")
 
 func _on_reset():
-	global_position = beginning_position
-	$BoulderWipeout.clear_boulders()
-	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(0,0), Vector2(1,1), 1.0, Tween.TRANS_CUBIC,Tween.EASE_OUT)
+	# wait for stuff to settle
+	yield(get_tree().create_timer(0.2), "timeout")
+	# show self!
+	linear_damp = -1
+	gravity_scale = 10.0
+	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(0,0), Vector2(1,1), 0.5, Tween.TRANS_CUBIC,Tween.EASE_OUT, 1.0)
 	yield($LightTween, "tween_completed")
-	mode = RigidBody2D.MODE_CHARACTER
