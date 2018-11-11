@@ -35,7 +35,7 @@ func _process(delta):
 
 func on_ladder():
 	on_ladder = true
-	linear_damp = 20.0
+	linear_damp = 15.0
 	gravity_scale = 0.0
 
 func off_ladder():
