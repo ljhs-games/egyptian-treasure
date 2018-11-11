@@ -3,7 +3,7 @@
 [ext_resource path="res://nodes/background-music/pharoah-ramses.ogg" type="AudioStream" id=1]
 [ext_resource path="res://nodes/background-music/BackgroundMusicPlayer.gd" type="Script" id=2]
 
-[node name="BackgroundMusicPlayer" type="AudioStreamPlayer"]
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" index="0"]
 
 stream = ExtResource( 1 )
 volume_db = 0.0

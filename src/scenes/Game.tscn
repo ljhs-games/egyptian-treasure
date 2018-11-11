@@ -54,8 +54,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Background" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Brick" parent="Background" index="0" instance=ExtResource( 1 )]
 
 modulate = Color( 0.578125, 0.578125, 0.578125, 1 )
@@ -198,6 +196,7 @@ position = Vector2( 160, 220 )
 [node name="Key" parent="Items" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 250, 640 )
+key_type = 2
 
 [node name="Player" parent="." index="3" instance=ExtResource( 11 )]
 

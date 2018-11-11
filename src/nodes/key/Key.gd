@@ -5,14 +5,20 @@ const KEYS = preload("res://nodes/player/KeyCounter.gd").KEYS
 
 export (KEYS) var key_type = KEYS.red setget _set_key_type
 
+onready var sprite_node = get_node("Sprite")
+
+func _ready():
+	self.key_type = key_type
+
 func _set_key_type(new_key_type):
 	key_type = new_key_type
-	if key_type == KEYS.red:
-		$Sprite.texture = preload("res://nodes/key/Key_Red.png")
-	elif key_type == KEYS.blue:
-		$Sprite.texture = preload("res://nodes/key/Key_Blue.png")
-	elif key_type == KEYS.yellow:
-		$Sprite.texture = preload("res://nodes/key/Key_Yellow.png")
+	if sprite_node != null:
+		if key_type == KEYS.red:
+			sprite_node.texture = preload("res://nodes/key/Key_Red.png")
+		elif key_type == KEYS.blue:
+			sprite_node.texture = preload("res://nodes/key/Key_Blue.png")
+		elif key_type == KEYS.yellow:
+			sprite_node.texture = preload("res://nodes/key/Key_Yellow.png")
 
 func _on_Key_body_entered(body):
 	if Engine.editor_hint:

@@ -12,7 +12,7 @@ func _on_setting_changed(setting, new_value):
 		update_color()
 
 func update_color():
-	if(Settings.audio):
+	if(Settings.get_setting("audio")):
 		set_color(on_color)
 	else:
 		set_color(off_color)
@@ -24,4 +24,4 @@ func set_color(new_color):
 	add_color_override("font_color_disabled", new_color)
 
 func _on_SoundButton_pressed():
-	Settings.audio = !Settings.audio
+	Settings.set_setting("audio", !Settings.get_setting("audio"))
