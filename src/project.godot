@@ -18,6 +18,8 @@ config/icon="res://icon.png"
 
 Settings="*res://nodes/settings/Setttings.gd"
 DeathBroadcaster="*res://nodes/player/DeathBroadcaster.gd"
+KeyCounter="*res://nodes/player/KeyCounter.gd"
+EndBroadcaster="*res://nodes/player/EndBroadcaster.gd"
 
 [display]
 

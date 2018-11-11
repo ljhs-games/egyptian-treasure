@@ -18,9 +18,9 @@ Music
 by
 Derek Fiechter
 
-Record Scratch
+Doorknob Jiggle
 by
-luffy CC BY 3.0
+Kyle1Katarn CC By 3.0
 """
 
 func _ready():

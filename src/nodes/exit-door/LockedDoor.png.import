@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Key_Yellow.png-7529541eb28a5e60f00278a9bceaf09b.stex"
+path="res://.import/LockedDoor.png-e4d629795a69d33ffbf666d6cbfb466d.stex"
 
 [deps]
 
-source_file="res://nodes/key/Key_Yellow.png"
-dest_files=[ "res://.import/Key_Yellow.png-7529541eb28a5e60f00278a9bceaf09b.stex" ]
+source_file="res://nodes/exit-door/LockedDoor.png"
+dest_files=[ "res://.import/LockedDoor.png-e4d629795a69d33ffbf666d6cbfb466d.stex" ]
 
 [params]
 
