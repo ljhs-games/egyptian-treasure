@@ -48,7 +48,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Player" type="RigidBody2D" index="0" groups=[
+[node name="Player" type="RigidBody2D" groups=[
 "player",
 ]]
 
@@ -178,7 +178,7 @@ pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
-bus = "Master"
+bus = "Effects"
 area_mask = 1
 
 

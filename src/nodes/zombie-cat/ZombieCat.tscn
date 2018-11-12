@@ -32,7 +32,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="ZombieCat" type="Node2D"]
+[node name="ZombieCat" type="Node2D" index="0"]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -51,7 +51,6 @@ move_speed = 50.0
 scale = Vector2( 1.8125, 1.8125 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]

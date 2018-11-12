@@ -85,6 +85,8 @@ func bring_to_zero(cur_val, difference):
 		return -cur_val
 
 func _on_death():
+	$SoundEffects.stream = preload("res://nodes/player/lose-jingle.wav")
+	$SoundEffects.play()
 	linear_damp = 400
 	gravity_scale = 0.0
 	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(1,1), Vector2(2,2), 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
@@ -108,7 +110,7 @@ func _on_reset():
 	yield($LightTween, "tween_completed")
 
 func _on_Player_new_key(key_type):
-	$SoundEffects.stream = preload("res://nodes/player/jungle-win.wav")
+	$SoundEffects.stream = preload("res://nodes/player/key-jingle.wav")
 	$SoundEffects.play()
 
 func _on_Player_setting_changed(setting_name, new_value):

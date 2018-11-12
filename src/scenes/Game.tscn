@@ -168,7 +168,12 @@ position = Vector2( 780, 350 )
 
 [node name="Platform5" parent="Stage" index="12" instance=ExtResource( 9 )]
 
-position = Vector2( 980, 420 )
+position = Vector2( 980, 400 )
+
+[node name="ZombieCat" parent="Stage/Platform5" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( -1.62109, -33.7825 )
+scale = Vector2( 1, 0.96875 )
 
 [node name="Platform6" parent="Stage" index="13" instance=ExtResource( 9 )]
 
