@@ -1,0 +1,71 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://nodes/zombie-cat/ZombieCat.gd" type="Script" id=1]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Walking/ZombieCat1.png" type="Texture" id=2]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Walking/ZombieCat2.png" type="Texture" id=3]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Walking/ZombieCat3.png" type="Texture" id=4]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Walking/ZombieCat4.png" type="Texture" id=5]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Dissolve/ZombieCat_Dissolve1.png" type="Texture" id=6]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Dissolve/ZombieCat_Dissolve2.png" type="Texture" id=7]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Dissolve/ZombieCat_Dissolve3.png" type="Texture" id=8]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Dissolve/ZombieCat_Dissolve4.png" type="Texture" id=9]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Dissolve/ZombieCat_Dissolve5.png" type="Texture" id=10]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Dissolve/ZombieCat_Dissolve6.png" type="Texture" id=11]
+[ext_resource path="res://nodes/zombie-cat/ZombieCat_Dissolve/ZombieCat_Dissolve7.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "dissolve",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="ZombieCat" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+move_speed = 50.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D" index="0"]
+
+scale = Vector2( 1.8125, 1.8125 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]
+
+shape = SubResource( 2 )
+
+[node name="RightPoint" type="Position2D" parent="." index="1"]
+
+position = Vector2( 80, 0 )
+
+[node name="LeftPoint" type="Position2D" parent="." index="2"]
+
+position = Vector2( -70, 0 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+
+

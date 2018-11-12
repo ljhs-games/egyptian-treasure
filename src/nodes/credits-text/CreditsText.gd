@@ -12,6 +12,10 @@ Team Lead and Programmer
 
 Stving_artist
 as
+Lead Artist
+
+Kathan Reddy
+as
 Artist
 
 Music
@@ -21,6 +25,14 @@ Derek Fiechter
 Doorknob Jiggle
 by
 Kyle1Katarn CC By 3.0
+
+Death Sound
+by
+LittleRobot SoundFactory CC By 3.0
+
+Key Get Sound
+by
+passAirmangrace CC By 3.0
 """
 
 func _ready():

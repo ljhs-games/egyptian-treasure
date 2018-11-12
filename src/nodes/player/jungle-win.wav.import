@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/jungle-win.wav-9d7691af6ef95b3fe1aade641d5cc98e.sample"
+
+[deps]
+
+source_file="res://nodes/player/jungle-win.wav"
+dest_files=[ "res://.import/jungle-win.wav-9d7691af6ef95b3fe1aade641d5cc98e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

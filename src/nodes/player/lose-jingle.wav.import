@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lose-jingle.wav-00cc69f5cccd8a653845eb9df7e377dd.sample"
+
+[deps]
+
+source_file="res://nodes/player/lose-jingle.wav"
+dest_files=[ "res://.import/lose-jingle.wav-00cc69f5cccd8a653845eb9df7e377dd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

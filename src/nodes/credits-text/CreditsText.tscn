@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://nodes/credits-text/CreditsText.gd" type="Script" id=1]
 
 [node name="CreditsText" type="Label"]
 
@@ -14,8 +16,11 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 1 )
+scroll_rate = 40.0
 
 

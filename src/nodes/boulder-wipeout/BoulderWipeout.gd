@@ -11,7 +11,7 @@ var boulder_counter = 0.0
 
 func _ready():
 	DeathBroadcaster.connect("dead", self, "_on_player_death")
-	DeathBroadcaster.connect("dead", self, "_on_player_reset")
+	DeathBroadcaster.connect("reset", self, "_on_player_reset")
 	set_process(false)
 
 func _on_player_death():
@@ -41,6 +41,6 @@ func _process(delta):
 	if boulder_counter >= 0.01:
 		var cur_boulder = boulder_pack.instance()
 		add_child(cur_boulder)
-		cur_boulder.global_position.x = randi() % 640 + 60
-		cur_boulder.global_position.y = -200
+		cur_boulder.global_position.x = (randi() % 640 + 60) + global_position.x
+		cur_boulder.global_position.y = (-200) + global_position.y
 		boulder_counter = 0.0

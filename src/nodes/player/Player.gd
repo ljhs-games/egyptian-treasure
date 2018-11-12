@@ -16,6 +16,8 @@ func _ready():
 	beginning_position = global_position
 	DeathBroadcaster.connect("dead", self, "_on_death")
 	DeathBroadcaster.connect("reset", self, "_on_reset")
+	KeyCounter.connect("new_key", self, "_on_Player_new_key")
+	Settings.connect("setting_changed", self, "_on_Player_setting_changed")
 	#DeathBroadcaster.emit_signal("dead")
 	$PlayerLight.visible = true
 	$CanvasModulate.visible = true
@@ -88,7 +90,7 @@ func _on_death():
 	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(1,1), Vector2(2,2), 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
 	$LightTween.start()
 	yield($LightTween, "tween_completed")
-	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(2,2), Vector2(0,0), 0.5, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(2,2), Vector2(0,0), 0.5, Tween.TRANS_QUAD, Tween.EASE_IN, 1.0)
 	$LightTween.start()
 	yield($LightTween, "tween_completed")
 	# now everything should be hidden...
@@ -104,3 +106,14 @@ func _on_reset():
 	gravity_scale = 10.0
 	$LightTween.interpolate_property($PlayerLight, "scale", Vector2(0,0), Vector2(1,1), 0.5, Tween.TRANS_CUBIC,Tween.EASE_OUT, 1.0)
 	yield($LightTween, "tween_completed")
+
+func _on_Player_new_key(key_type):
+	$SoundEffects.stream = preload("res://nodes/player/jungle-win.wav")
+	$SoundEffects.play()
+
+func _on_Player_setting_changed(setting_name, new_value):
+	if setting_name == "audio":
+		if new_value == true:
+			$SoundEffects.volume_db = 0.0
+		else:
+			$SoundEffects.volume_db = -80.0

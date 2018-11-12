@@ -7,7 +7,6 @@ func _ready():
 	#_on_player_dead()
 
 func _on_player_dead():
-	print("making visible")
 	self.visible = true
 	modulate.a = 1.0
 	frame = 0
